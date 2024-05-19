@@ -223,7 +223,7 @@ def decompress_pickle(file):
     data = pickle.load(data)
     return data
 
-model = decompress_pickle('Rainfall-Prediction\models\XB.pbz2')
+    #model = decompress_pickle('Rainfall-Prediction\models\XB.pbz2')
 
 # Load the label encoder
 label_encoder = LabelEncoder()
@@ -244,6 +244,7 @@ def crop_index():
 
 @app.route('/crop_parameters', methods=['POST'])
 def process_parameters():
+    model = decompress_pickle('Rainfall-Prediction\models\XB.pbz2')
     if request.method == 'POST':
         # Retrieve the form data
         N = float(request.form['N'])
